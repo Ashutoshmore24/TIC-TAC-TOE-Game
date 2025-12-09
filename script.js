@@ -1,3 +1,7 @@
+const clickSound = new Audio("assets/clicksound.wav");
+const winSound = new Audio("assets/winingSound.mp3");
+const drawSound = new Audio("assets/preview.mp3")
+
 let boxes = document.querySelectorAll(".box");
 let resetbtn = document.getElementById("reset");
 let newGameBtn = document.getElementById("newGame");
@@ -24,6 +28,8 @@ const enableAllBoxes = () => boxes.forEach(box => {
 });
 
 const showWinner = (winner) => {
+    winSound.currentTime = 0;
+    winSound.play();
     console.log("Winner : ", winner);
     message.innerText = `Congratulation ! Winner is ${winner}`;
     messageContainer.classList.remove('hide');
@@ -48,6 +54,8 @@ const checkWinner = () => {
         if (box.innerText === "") allFilled = false;
     });
     if (allFilled && !gameOver) {
+        drawSound.currentTime = 0;
+        drawSound.play();
         message.innerText = "It's a Draw!";
         messageContainer.classList.remove("hide");
         gameOver = true;
@@ -58,6 +66,9 @@ const checkWinner = () => {
 boxes.forEach((box, index) => {
     box.addEventListener("click", () => {
         if (gameOver || box.innerText !== "") return;
+
+        clickSound.currentTime = 0;
+        clickSound.play();
 
         box.innerText = turnO ? "O" : "X";
         turnO = !turnO;

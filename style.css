@@ -3,6 +3,66 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --bg-color:#111;
+    --reset-bg : #ff4b2b;
+    --reset-hover : #ff2a00;
+    --border-color : white;
+    --newGame-text : rgb(13, 13, 13);
+    --box-bg : #222;
+    --box-color : #00eaff;
+    --box-hover : #333;
+    --box-shadow : rgb(207, 206, 206);
+    --msg-textc1 : rgb(218, 175, 5);
+    --msg-textc2 : rgb(234, 242, 3);
+}
+.darkmode{
+    --bg-color:#f9f5f5;
+    --reset-bg : #ff4b2b;
+    --reset-hover : #ff2a00;
+    --border-color : rgba(236, 230, 230, 0.856);
+    --newGame-text : rgb(13, 13, 13);
+    --box-bg : #b1aeaef6;
+    --box-color : #ff1100;
+    --box-hover : #434343ab;
+    --box-shadow : rgb(207, 206, 206);
+    --msg-textc1 : rgb(5, 55, 218);
+    --msg-textc2 : rgb(3, 87, 242);
+}
+
+#theme-switcher{
+    padding: 5px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: var(--box-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    border: none;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.darkmode #theme-switcher{
+    background-color: var(--msg-textc1);
+}
+#theme-switcher svg{
+    fill: var(--msg-textc1);
+}
+.darkmode #theme-switcher svg{
+    fill : var(--bg-color)
+}
+#theme-switcher svg:last-child{
+    display: none;
+}
+.darkmode #theme-switcher svg:first-child{
+    display: none;
+}
+.darkmode #theme-switcher svg:last-child{
+    display: block;
+}
 
 body {
     display: flex;
@@ -10,7 +70,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    background: #111;
+    background: var(--bg-color);
     font-family: system-ui, sans-serif;
 }
 .msg-container{
@@ -20,10 +80,10 @@ body {
     width: 500px ;
     flex: 1 1 0;
     min-height: 550px;
-    box-shadow: -1px -1px 10px rgb(207, 206, 206) inset;
+    box-shadow: -1px -1px 10px var(--box-shadow) inset;
     background-color: transparent;
     backdrop-filter: blur(10px);
-    border: 1px solid white;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 10px;
     display: flex;
@@ -35,7 +95,7 @@ body {
 }
 .msg{
     text-align: center;
-    background: linear-gradient(to top,rgb(218, 175, 5),rgb(234, 242, 3));
+    background: linear-gradient(to top,var(--msg-textc1),var(--msg-textc2));
     color: transparent;
     background-clip: text;
     margin: 20px;
@@ -55,7 +115,7 @@ body {
 #newGame{
     position: relative;
     margin: 15px;
-    color: rgb(13, 13, 13);
+    color: var(--newGame-text);
     background: linear-gradient(to top, rgb(255, 157, 0),yellow);
     border: none;
     font-weight: 600;
@@ -90,11 +150,11 @@ body {
 .box {
     width: 100px;
     height: 100px;
-    background: #222;
+    background:var(--box-bg);
     border: none;
     font-size: 3rem;
     font-weight: bold;
-    color: #00eaff;
+    color: var(--box-color);
     cursor: pointer;
     border-radius: 12px;
     transition: 0.2s ease;
@@ -102,29 +162,25 @@ body {
 
 .box:hover {
     transform: scale(1.08);
-    background: #333;
-}
-
-.box.winner {
-    background: #00c853;
-    color: white;
+    background: var(--box-hover);
 }
 
 #reset {
     margin-top: 20px;
     padding: 12px 25px;
     font-size: 18px;
-    background: #ff4b2b;
+    font-weight:600;
+    background:var(--reset-bg);
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    color: white;
+    color: var(--border-color);
     transition: 0.2s ease;
 }
 
 #reset:hover {
     transform: scale(1.05);
-    background: #ff2a00;
+    background:var(--reset-hover);
 }
 .hide{
     display:none;
