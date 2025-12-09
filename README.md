@@ -5,10 +5,9 @@ Designed with smooth UI, responsiveness, and clean game logic.
 
 ---
 
-## ⭕ Live Demo
+## 🔥 Preview
 
-🔗 **Play here:** 
-`https://ashutoshmore24.github.io/TIC-TAC-TOE-Game/`
+https://github.com/user-attachments/assets/fdc173d1-a1b9-450c-a2e5-91128754c979
 
 ---
 
@@ -19,12 +18,6 @@ Designed with smooth UI, responsiveness, and clean game logic.
 - Players take turns placing **X or O**
 - The first player to align **3 marks horizontally, vertically, or diagonally wins**
 - If all boxes are filled and no one wins → **Draw**
-
----
-
-## 🔥 Preview
-
-https://github.com/user-attachments/assets/fdc173d1-a1b9-450c-a2e5-91128754c979
 
 ---
 
