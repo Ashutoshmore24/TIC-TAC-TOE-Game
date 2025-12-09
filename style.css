@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background: #111;
+    font-family: system-ui, sans-serif;
+}
+.msg-container{
+    position: absolute;
+    transform: translateY(-60px);
+    z-index: 10;
+    width: 500px ;
+    flex: 1 1 0;
+    min-height: 550px;
+    box-shadow: -1px -1px 10px rgb(207, 206, 206) inset;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    animation: ZoomFrame 0.5s ease-in-out;
+}
+.msg{
+    text-align: center;
+    background: linear-gradient(to top,rgb(218, 175, 5),rgb(234, 242, 3));
+    color: transparent;
+    background-clip: text;
+    margin: 20px;
+    font-size: 50px;
+    font-weight: 900;
+}
+@keyframes ZoomFrame{
+    0%{
+        scale: 0.3;
+        opacity: 0.5;
+    }
+    100%{
+        scale: 1;
+        opacity: 1;
+    }
+}
+#newGame{
+    position: relative;
+    margin: 15px;
+    color: rgb(13, 13, 13);
+    background: linear-gradient(to top, rgb(255, 157, 0),yellow);
+    border: none;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.container {
+    transform: translateY(-70px);
+    text-align: center;
+}
+
+.Game h1 {
+    margin-bottom: 25px;
+    font-size: 38px;
+    font-weight: 900;
+    background: linear-gradient(to right,red, blue);
+    background-clip: text;
+    color: transparent;
+}
+
+.boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 15px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: #222;
+    border: none;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00eaff;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 0.2s ease;
+}
+
+.box:hover {
+    transform: scale(1.08);
+    background: #333;
+}
+
+.box.winner {
+    background: #00c853;
+    color: white;
+}
+
+#reset {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 18px;
+    background: #ff4b2b;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: 0.2s ease;
+}
+
+#reset:hover {
+    transform: scale(1.05);
+    background: #ff2a00;
+}
+.hide{
+    display:none;
+}
+
+/* for tablet , laptop screen */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .msg-container {
+        width: 90vw;
+        min-height: 450px;
+        gap: 60px;
+        transform: translateY(-40px);
+        padding: 12px;
+    }
+
+    .msg {
+        font-size: 36px;
+        margin: 10px;
+    }
+
+    .Game h1 {
+        font-size: 30px;
+        margin-bottom: 18px;
+    }
+
+    .container {
+        transform: translateY(-40px);
+    }
+
+    .boxes {
+        grid-template-columns: repeat(3, 85px);
+        gap: 12px;
+        margin: 15px auto;
+    }
+
+    .box {
+        width: 85px;
+        height: 85px;
+        font-size: 2.4rem;
+    }
+
+    #newGame,
+    #reset {
+        font-size: 16px;
+        padding: 8px 18px;
+    }
+}
+/* for phones screen */
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+    }
+
+    .msg-container {
+        width: 95vw;
+        min-height: 380px;
+        gap: 40px;
+        transform: translateY(-20px);
+        padding: 10px;
+    }
+
+    .msg {
+        font-size: 26px;
+        margin: 8px;
+    }
+
+    .Game h1 {
+        font-size: 24px;
+        margin-bottom: 14px;
+    }
+
+    .container {
+        transform: translateY(-20px);
+    }
+
+    .boxes {
+        grid-template-columns: repeat(3, 70px);
+        gap: 10px;
+        margin: 12px auto;
+    }
+
+    .box {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+        border-radius: 10px;
+    }
+
+    #newGame,
+    #reset {
+        font-size: 14px;
+        padding: 7px 14px;
+        margin-top: 10px;
+    }
+}
